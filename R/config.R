@@ -21,5 +21,8 @@ config <- function(query) {
     external_data_dir <- "R:/Prospect Development/Prospect Analysis/external_datasets"
     csv_filename <- paste(external_data_dir, "acs_demographics.csv", sep = "/")
     
+    # snapshot database location
+    snapshot_db <- "R:/Prospect Development/Prospect Analysis/external_datasets/external_data.sqlite"
+    
     get(query, inherits = FALSE)
 }

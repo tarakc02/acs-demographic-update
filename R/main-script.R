@@ -3,6 +3,7 @@ source("R/config.R")
 source("R/database-functions.R")
 source("R/query-database.R")
 source("R/processing-functions.R")
+source("R/snapshot.R")
 
 # these constants are stored in the config file. edit them there, not here!
 high_income <- config("high_income")
@@ -107,8 +108,8 @@ demographics <- raw_demographics %>%
            after2000_pct,
            before1980_pct)
 
-# overwrite file in external data directory
-write.csv(demographics, file = csv_filename, row.names = FALSE)
-
 # make snapshot
 snapshot(demographics, updated = format.Date(Sys.Date(), "%Y%m%d"))
+
+# overwrite file in external data directory
+write.csv(demographics, file = csv_filename, row.names = FALSE)
