@@ -22,25 +22,26 @@ select
     /*
         moved in after 2000
     */
-    tenure_length_bg.b25038004 + 
+    tenure_length_bg.b25038005 + tenure_length_bg.b25038004 + 
         tenure_length_bg.b25038003 as owner_occupied_after2000_bg,
-    sqrt((tenure_length_bg.b25038004_moe ^ 2) + 
+    sqrt((tenure_length_bg.b25038005_moe ^ 2) + 
+         (tenure_length_bg.b25038004_moe ^ 2) + 
          (tenure_length_bg.b25038003_moe ^ 2)) as owner_occupied_after2000_moe_bg,
-    tenure_length_tract.b25038004 + 
+    tenure_length_tract.b25038005 + tenure_length_tract.b25038004 + 
     tenure_length_tract.b25038003 as owner_occupied_after2000_tract,
-    sqrt((tenure_length_tract.b25038004_moe ^ 2) + 
+    sqrt((tenure_length_tract.b25038005_moe ^ 2) +
+         (tenure_length_tract.b25038004_moe ^ 2) + 
          (tenure_length_tract.b25038003_moe ^ 2)) as owner_occupied_after2000_moe_tract,
     /* 
         moved in 1980 or before 
     */
-    tenure_length_bg.b25038006 + tenure_length_bg.b25038007 + 
+    tenure_length_bg.b25038007 + 
         tenure_length_bg.b25038008 as owner_occupied_before1980_bg,
-    sqrt((tenure_length_bg.b25038006_moe ^ 2) + (tenure_length_bg.b25038007_moe ^ 2) + 
+    sqrt((tenure_length_bg.b25038007_moe ^ 2) + 
          (tenure_length_bg.b25038008_moe ^ 2)) as owner_occupied_before1980_moe_bg,
-    tenure_length_tract.b25038006 + tenure_length_tract.b25038007 + 
+    tenure_length_tract.b25038007 + 
         tenure_length_tract.b25038008 as owner_occupied_before1980_tract,
-    sqrt((tenure_length_tract.b25038006_moe ^ 2) + 
-         (tenure_length_tract.b25038007_moe ^ 2) + 
+    sqrt((tenure_length_tract.b25038007_moe ^ 2) + 
          (tenure_length_tract.b25038008_moe ^ 2)) as owner_occupied_before1980_moe_tract
 from
     cads
