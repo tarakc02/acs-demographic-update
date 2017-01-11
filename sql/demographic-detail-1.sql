@@ -130,35 +130,35 @@ from
     /* 
         median income 
     */
-    left join acs2014_5yr.b19013_moe median_income_bg
+    left join acs2015_5yr.b19013_moe median_income_bg
         on substring(median_income_bg.geoid from position('S' in median_income_bg.geoid)+1) = bg.bg_id
-    left join acs2014_5yr.b19013_moe median_income_tract
+    left join acs2015_5yr.b19013_moe median_income_tract
         on substring(median_income_tract.geoid from position('S' in median_income_tract.geoid)+1) = tract.tract_id
     /* 
         percent investors (arithmetic now or later?) 
     */
-    left join acs2014_5yr.b19054_moe invest_bg
+    left join acs2015_5yr.b19054_moe invest_bg
         on substring(invest_bg.geoid from position('S' in invest_bg.geoid)+1) = bg.bg_id
-    left join acs2014_5yr.b19054_moe invest_tract
+    left join acs2015_5yr.b19054_moe invest_tract
         on substring(invest_tract.geoid from position('S' in invest_tract.geoid)+1) = tract.tract_id
     /* 
         ages 
     */
-    left join acs2014_5yr.b01001_moe age_bg
+    left join acs2015_5yr.b01001_moe age_bg
         on substring(age_bg.geoid from position('S' in age_bg.geoid)+1) = bg.bg_id
-    left join acs2014_5yr.b01001_moe age_tract
+    left join acs2015_5yr.b01001_moe age_tract
         on substring(age_tract.geoid from position('S' in age_tract.geoid)+1) = tract.tract_id
     /* 
         education level 
     */
-    left join acs2014_5yr.b15003_moe education_bg
+    left join acs2015_5yr.b15003_moe education_bg
         on substring(education_bg.geoid from position('S' in education_bg.geoid)+1) = bg.bg_id
-    left join acs2014_5yr.b15003_moe education_tract
+    left join acs2015_5yr.b15003_moe education_tract
         on substring(education_tract.geoid from position('S' in education_tract.geoid)+1) = tract.tract_id
     /* 
         school type (private vs public) 
     */
-    left join acs2014_5yr.b14002_moe private_school_bg
+    left join acs2015_5yr.b14002_moe private_school_bg
         on substring(private_school_bg.geoid from position('S' in private_school_bg.geoid)+1) = bg.bg_id
-    left join acs2014_5yr.b14002_moe private_school_tract
+    left join acs2015_5yr.b14002_moe private_school_tract
         on substring(private_school_tract.geoid from position('S' in private_school_tract.geoid)+1) = tract.tract_id;

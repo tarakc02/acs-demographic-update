@@ -50,14 +50,14 @@ from
     /* 
         tenure type 
     */
-    left join acs2014_5yr.b25003_moe tenure_type_bg
+    left join acs2015_5yr.b25003_moe tenure_type_bg
         on substring(tenure_type_bg.geoid from position('S' in tenure_type_bg.geoid)+1) = bg.bg_id
-    left join acs2014_5yr.b25003_moe tenure_type_tract
+    left join acs2015_5yr.b25003_moe tenure_type_tract
         on substring(tenure_type_tract.geoid from position('S' in tenure_type_tract.geoid)+1) = tract.tract_id
     /* 
         year moved in to unit -- only looking at owner-occupied 
     */
-    left join acs2014_5yr.b25038_moe tenure_length_bg
+    left join acs2015_5yr.b25038_moe tenure_length_bg
         on substring(tenure_length_bg.geoid from position('S' in tenure_length_bg.geoid)+1) = bg.bg_id
-    left join acs2014_5yr.b25038_moe tenure_length_tract
+    left join acs2015_5yr.b25038_moe tenure_length_tract
         on substring(tenure_length_tract.geoid from position('S' in tenure_length_tract.geoid)+1) = tract.tract_id
